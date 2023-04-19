@@ -1,14 +1,32 @@
-pom.xml
-pom.xml.asc
-*.jar
-*.class
-/lib/
-/classes/
-/target/
-/checkouts/
-.lein-deps-sum
-.lein-repl-history
-.lein-plugins/
-.lein-failures
+# Gradle
+.gradle/
+build/
+
+# IntelliJ
+*.iml
+*.iws
+*.ipr
+.idea
+
+# Eclipse
+.settings/
+.project
+.classpath
+bin/
+
+# Calva
+.calva/
+.clj-kondo/
+.lsp/
+
+# Clojure
 .nrepl-port
-.cpcache/
+
+# Sublime
+*.sublime-workspace
+
+# VS Code
+.vscode/
+
+# Other
+*~
