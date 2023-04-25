@@ -3,6 +3,7 @@ plugins {
   id 'application'
   id 'com.github.johnrengelman.shadow' version '7.1.2'
   id 'maven-publish'
+  id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
 group = 'my.group'
@@ -18,10 +19,23 @@ repositories {
   }
 }
 
+javafx {
+    version = "17"
+    modules = [ 'javafx.controls' ]
+}
+
 dependencies {
+  // edn support
+  // implementation("us.bpsm:edn-java:0.7.1")
+
+  // clojure
   implementation 'org.clojure:clojure:1.11.1'
 
+  // testing
   testRuntimeOnly 'org.ajoberstar:jovial:0.3.0'
+
+  // JavaFX GUI
+  implementation 'cljfx:cljfx:1.7.22'
 
   devImplementation 'org.clojure:tools.namespace:1.3.0'
 }
