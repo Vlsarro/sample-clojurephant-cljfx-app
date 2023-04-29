@@ -34,7 +34,10 @@ dependencies {
   // testing
   testRuntimeOnly 'org.ajoberstar:jovial:0.3.0'
 
-  // JavaFX GUI
+  // FIXME local cljfx platform jdk11 dependency, gradle cannot resolve profile dependency of cljfx so it's added here manually
+  implementation files('libs/cljfx-1.7.22-jdk11.jar') 
+
+  // JavaFX GUI via cljfx wrapper
   implementation 'cljfx:cljfx:1.7.22'
 
   devImplementation 'org.clojure:tools.namespace:1.3.0'
