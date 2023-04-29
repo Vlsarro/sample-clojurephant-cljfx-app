@@ -16,6 +16,11 @@ Run the project's tests (they'll fail until you edit them):
 $ ./gradlew test
 ```
 
+Run the project's clojure REPL:
+```
+$ ./gradlew clojureRepl
+```
+
 ## More Help
 
 See [Clojurephant's Docs](https://clojurephant.dev).
