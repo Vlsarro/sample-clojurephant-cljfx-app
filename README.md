@@ -26,6 +26,8 @@ Run the project's Clojure REPL:
 $ ./gradlew clojureRepl
 ```
 
-## More Help
+## Screenshots
 
-See [Clojurephant's Docs](https://clojurephant.dev).
+JavaFX App             |  Cljfx App
+:-------------------------:|:-------------------------:
+![](doc/javafx_app.png)  |  ![](doc/cljfx_app.png)
