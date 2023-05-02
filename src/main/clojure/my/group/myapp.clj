@@ -1,5 +1,6 @@
 (ns my.group.myapp
   (:require [cljfx.api :as fx])
+  (:import [javafx.application Platform])
   (:gen-class))
 
 (defonce *state (atom {:slider-value 50}))
@@ -39,4 +40,5 @@
 
 (defn -main
   [& args]
+  (Platform/setImplicitExit true)
   (fx/mount-renderer *state renderer))
