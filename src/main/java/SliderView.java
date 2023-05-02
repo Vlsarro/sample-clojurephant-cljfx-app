@@ -1,18 +1,41 @@
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.control.Slider;
 import javafx.stage.Stage;
+import javafx.geometry.Pos;
+import components.SliderLabel;
 
 public class SliderView extends Application {
 
+    final Slider mainSlider = new Slider(0, 100, 40);
+    final SliderLabel mainSliderValueLabel = new SliderLabel(Double.toString(mainSlider.getValue()));
+    final Label javaInfoLabel = new Label(
+        "Hello, JavaFX " + System.getProperty("javafx.version") + ", running on Java " + System.getProperty("java.version") + "."
+    );
+
+    public void setupListeners() {
+        mainSlider.valueProperty().addListener(new ChangeListener<Number>() {
+            public void changed(ObservableValue <? extends Number> ov,
+                Number oldVal, Number newVal) {
+                    mainSliderValueLabel.updateText(String.format("%.2f", newVal));
+                }
+        });
+    }
+
     @Override
     public void start(Stage stage) {
-        String javaVersion = System.getProperty("java.version");
-        String javafxVersion = System.getProperty("javafx.version");
-        Label l = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        Scene scene = new Scene(new StackPane(l), 640, 480);
+        VBox vb = new VBox(5, javaInfoLabel, mainSliderValueLabel, mainSlider);
+        vb.setAlignment(Pos.CENTER);
+
+        Scene scene = new Scene(vb, 640, 480);
         stage.setScene(scene);
+
+        setupListeners();
+
         stage.show();
     }
 
