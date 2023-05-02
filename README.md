@@ -4,19 +4,24 @@ Sample project using [clojurephant](https://github.com/clojurephant) to build a 
 
 ## Usage
 
-Run the project directly:
+Run the project's cljfx app directly:
 
 ```
 $ ./gradlew runShadow
 ```
 
-Run the project's tests (they'll fail until you edit them):
+Run the project's pure JavaFX app directly:
+```
+$ ./gradlew run -PchooseMain=SliderView
+```
+
+Run the project's tests:
 
 ```
 $ ./gradlew test
 ```
 
-Run the project's clojure REPL:
+Run the project's Clojure REPL:
 ```
 $ ./gradlew clojureRepl
 ```

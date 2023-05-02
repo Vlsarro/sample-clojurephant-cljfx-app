@@ -9,7 +9,9 @@ plugins {
 group = 'my.group'
 version = '0.1.0-SNAPSHOT'
 
-mainClassName = 'my.group.myapp'
+application {
+  mainClassName = project.hasProperty('chooseMain') ? project.findProperty('chooseMain').toString() : 'my.group.myapp'
+}
 
 repositories {
   mavenCentral()
